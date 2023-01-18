@@ -11,33 +11,33 @@
 // ["Russia", "Denmark", "Kazan"]
 
 Console.Clear();
+int ArrayLength = 0;
 int count = 0;
-int count2 = 0;
 Console.Write($"Введите длину массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-string[] arr = new string[n];
+string[] Array = new string[n];
 
-void InputArray(string[] array)
+void InputArray(string[] Array)
 {
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < Array.Length; i++)
     {
         Console.Write($"Введите {i + 1} значение массива: ");
-        array[i] = Convert.ToString(Console.ReadLine());
-        if (array[i].Length <= 3) count++;
+        Array[i] = Convert.ToString(Console.ReadLine());
+        if (Array[i].Length <= 3) ArrayLength++;
     }
 }
 
-InputArray(arr);
+InputArray(Array);
 
-if (count == 0) { Console.WriteLine("Значений не найдено"); return; }
+if (ArrayLength == 0) { Console.WriteLine("Значений не найдено"); return; }
 
-string[] arr2 = new string[count];
+string[] FinalArray = new string[ArrayLength];
 
-for (int j = 0; j < arr.Length; j++)
+for (int j = 0; j < Array.Length; j++)
 {
-    if (arr[j].Length <= 3) { arr2[count2] = arr[j]; count2++; }
+    if (Array[j].Length <= 3) { FinalArray[count] = Array[j]; count++; }
 }
 
-Console.WriteLine($"Начальный массив: [{string.Join(", ", arr)}]");
-Console.WriteLine($"Конечный массив: [{string.Join(", ", arr2)}]");
+Console.WriteLine($"Начальный массив: [{string.Join(", ", Array)}]");
+Console.WriteLine($"Конечный массив: [{string.Join(", ", FinalArray)}]");
