@@ -13,13 +13,24 @@
 Console.Clear();
 int count = 0;
 int count2 = 0;
-string[] arr = new string[] {"1234", "1567", "-2", "computer sciense"};
+Console.Write($"Введите длину массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
+string[] arr = new string[n];
 
-for (int i = 0; i < arr.Length; i++) { if (arr[i].Length <= 3) count++; }
+void InputArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"Введите {i + 1} значение массива: ");
+        array[i] = Convert.ToString(Console.ReadLine());
+        if (array[i].Length <= 3) count++;
+    }
+}
 
-if (count == 0) {Console.WriteLine("Значений не найдено"); return;}
-Console.WriteLine(count);
+InputArray(arr);
+
+if (count == 0) { Console.WriteLine("Значений не найдено"); return; }
 
 string[] arr2 = new string[count];
 
@@ -28,7 +39,5 @@ for (int j = 0; j < arr.Length; j++)
     if (arr[j].Length <= 3) { arr2[count2] = arr[j]; count2++; }
 }
 
-
 Console.WriteLine($"Начальный массив: [{string.Join(", ", arr)}]");
-
 Console.WriteLine($"Конечный массив: [{string.Join(", ", arr2)}]");
