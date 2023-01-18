@@ -6,9 +6,29 @@
 // 4. Написать программу, решающую поставленную задачу
 // 5. Использовать больше 4 коммитов
 
-// [hello, 2, world, :-)]
-// [1234, 1567, -2, computer sciense]
-// [Russia, Denmark, Kazan]
+// ["hello", "2", "world", ":-)"]
+// ["1234", "1567", "-2", "computer sciense"]
+// ["Russia", "Denmark", "Kazan"]
 
 Console.Clear();
+int count = 0;
+int count2 = 0;
+string[] arr = new string[] {"1234", "1567", "-2", "computer sciense"};
 
+
+for (int i = 0; i < arr.Length; i++) { if (arr[i].Length <= 3) count++; }
+
+if (count == 0) {Console.WriteLine("Значений не найдено"); return;}
+Console.WriteLine(count);
+
+string[] arr2 = new string[count];
+
+for (int j = 0; j < arr.Length; j++)
+{
+    if (arr[j].Length <= 3) { arr2[count2] = arr[j]; count2++; }
+}
+
+
+Console.WriteLine($"Начальный массив: [{string.Join(", ", arr)}]");
+
+Console.WriteLine($"Конечный массив: [{string.Join(", ", arr2)}]");
