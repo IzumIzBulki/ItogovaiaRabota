@@ -28,16 +28,18 @@ void InputArray(string[] Array)
     }
 }
 
-InputArray(Array);
-
-if (ArrayLength == 0) { Console.WriteLine("Значений не найдено"); return; }
-
-string[] FinalArray = new string[ArrayLength];
-
-for (int j = 0; j < Array.Length; j++)
+void InputArray2(string[] FinalArray, string[] Array)
 {
-    if (Array[j].Length <= 3) { FinalArray[count] = Array[j]; count++; }
+    for (int j = 0; j < Array.Length; j++)
+    {
+        if (Array[j].Length <= 3) { FinalArray[count] = Array[j]; count++; }
+    }
 }
+
+InputArray(Array);
+string[] FinalArray = new string[ArrayLength];
+if (ArrayLength == 0) { Console.WriteLine("Значений не найдено"); return; }
+InputArray2(FinalArray, Array);
 
 Console.WriteLine($"Начальный массив: [{string.Join(", ", Array)}]");
 Console.WriteLine($"Конечный массив: [{string.Join(", ", FinalArray)}]");
