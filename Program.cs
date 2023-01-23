@@ -28,7 +28,7 @@ void InputArray(string[] Array)
     }
 }
 
-void InputArray2(string[] FinalArray, string[] Array)
+void FilteringArray(string[] FinalArray, string[] Array)
 {
     for (int j = 0; j < Array.Length; j++)
     {
@@ -39,7 +39,7 @@ void InputArray2(string[] FinalArray, string[] Array)
 InputArray(Array);
 string[] FinalArray = new string[ArrayLength];
 if (ArrayLength == 0) { Console.WriteLine("Значений не найдено"); return; }
-InputArray2(FinalArray, Array);
+FilteringArray(FinalArray, Array);
 
 Console.WriteLine($"Начальный массив: [{string.Join(", ", Array)}]");
 Console.WriteLine($"Конечный массив: [{string.Join(", ", FinalArray)}]");
